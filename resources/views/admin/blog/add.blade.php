@@ -1,7 +1,7 @@
 @extends('layouts.admin.index')
 @section('content')
 <div class="section-header">
-    <h1>Buat Postingan</h1>
+    <h1>Buat Postingan Blog</h1>
   </div>
 <div class="row">
     <div class="col-md-12">
