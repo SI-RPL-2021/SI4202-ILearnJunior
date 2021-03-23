@@ -1,13 +1,13 @@
 @extends('layouts.admin.index')
 @section('content')
 <div class="section-header">
-    <h1>Buat Postingan</h1>
+    <h1>Materi</h1>
   </div>
 <div class="row">
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                <h4>Tambah Data</h4>
+                <h4>Judul Materi</h4>
                 <div class="card-header-action">
                     <button id="btn-back" class="btn btn-primary">
                         Kembali
@@ -30,13 +30,6 @@
                         {{ old('content_blog') }}
                         </textarea>
                         @error('content_blog')
-                        <small class="text-danger">{{ $message }}</small>
-                        @enderror
-                    </div>
-                    <div class="form-group">
-                        <label for="">thumbnail_blog</label>
-                        <input type="file" name="thumbnail_blog" class="form-control @error('thumbnail_blog') is-invalid @enderror">
-                        @error('thumbnail_blog')
                         <small class="text-danger">{{ $message }}</small>
                         @enderror
                     </div>

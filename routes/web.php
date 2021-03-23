@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\MateriController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,3 +22,4 @@ Route::get('/', function () {
 
 Route::get('/tambah', [BlogController::class , 'create'])->name('tambah_blog');
 Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/materi', [MateriController::class , 'create'])->name('tambah_materi');
