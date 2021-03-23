@@ -20,25 +20,16 @@
                     <div class="form-group">
                         <label for="">Judul</label>
                         <input type="text" name="name_blog" class="form-control @error('name_blog') is-invalid @enderror" value="{{ old('name_blog') }}">
-                        @error('name_blog')
-                        <small class="text-danger">{{ $message }}</small>
-                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="">Konten</label>
                         <textarea name="content_blog" class="form-control" id="floatingTextarea2" style="height: 100px"></textarea>
                         {{ old('content_blog') }}
                         </textarea>
-                        @error('content_blog')
-                        <small class="text-danger">{{ $message }}</small>
-                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="">thumbnail_blog</label>
                         <input type="file" name="thumbnail_blog" class="form-control @error('thumbnail_blog') is-invalid @enderror">
-                        @error('thumbnail_blog')
-                        <small class="text-danger">{{ $message }}</small>
-                        @enderror
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-success">Simpan Blog</button>
