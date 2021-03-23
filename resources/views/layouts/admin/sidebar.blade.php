@@ -39,12 +39,9 @@
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a href="#" class="nav-link has-dropdown"><i class="fas fa-plug"></i> <span>Management Soon</span></a>
+            <a href="#" class="nav-link has-dropdown"><i class="fas fa-plug"></i> <span>Management Materi Pelajaran</span></a>
             <ul class="dropdown-menu">
-              <li><a class="nav-link" href="modules-calendar.html">Calendar</a></li>
-              <li><a class="nav-link" href="modules-chartjs.html">ChartJS</a></li>
-              <li><a class="nav-link" href="modules-datatables.html">DataTables</a></li>
-              <li><a class="nav-link" href="modules-flag.html">Flag</a></li>
+              <li><a class="nav-link" href="{{route('tambah_materi_video')}}">Post Materi Video</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
