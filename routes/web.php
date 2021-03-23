@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\KelasController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,4 +21,5 @@ Route::get('/', function () {
 });
 
 Route::get('/tambah', [BlogController::class , 'create'])->name('tambah_blog');
+Route::get('/tambah_kelas', [KelasController::class , 'create'])->name('tambah_kelas');
 Route::get('/admin', [AdminController::class, 'index']);
