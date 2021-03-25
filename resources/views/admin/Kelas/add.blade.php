@@ -8,10 +8,9 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                <h4>Tambah Kelas</h4>
                 <div class="card-header-action">
                     <a href="" class="btn btn-primary">
-                        Cari
+                        Tambah
                     </a>
                 </div>
             </div>
@@ -24,11 +23,22 @@
                                 <th>Nama Kelas</th>
                                 <th>Tipe Kelas</th>
                                 <th>Thumbnail</th>
-                                <th>Aksi</th>
+                                <th width="10%">Aksi</th>
                             </tr>
                         </thead>
-                    </div>
+                        <tbody>
+                                <td>
+                                    <img src="" width="200" alt="" srcset="">
+                                </td>
+                                <td>
+                                    <a href=""
+                                        class="btn btn-warning">Detail</a>
+                                </td>
+                        </tbody>
+                    </table>
                 </div>
-
-
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
