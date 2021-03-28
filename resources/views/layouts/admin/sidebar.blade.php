@@ -20,7 +20,7 @@
             <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i> <span>Management Kelas</span></a>
             <ul class="dropdown-menu">
               <li><a class="nav-link" href="{{route('tambah_kelas')}}">Tambah Kelas</a></li>
-              <li><a class="nav-link beep beep-sidebar" href="components-avatar.html">Lihat Kelas</a></li>
+              <li><a class="nav-link beep beep-sidebar" href="/index_kelas">Lihat Kelas</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">

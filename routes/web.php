@@ -22,4 +22,6 @@ Route::get('/', function () {
 
 Route::get('/tambah', [BlogController::class , 'create'])->name('tambah_blog');
 Route::get('/tambah_kelas', [KelasController::class , 'create'])->name('tambah_kelas');
+Route::get('/index_kelas', [KelasController::class , 'index']);
+Route::post('/data_kelas', [KelasController::class , 'simpan'])->name('kelas_data');
 Route::get('/admin', [AdminController::class, 'index']);

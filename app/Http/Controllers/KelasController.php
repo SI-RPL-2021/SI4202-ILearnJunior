@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Kelas;
 
 class KelasController extends Controller
 {
@@ -13,7 +14,8 @@ class KelasController extends Controller
      */
     public function index()
     {
-        //
+        $kls = Kelas::get();
+        return view("admin.Kelas.index", compact('kls'));
     }
 
     /**
@@ -26,61 +28,44 @@ class KelasController extends Controller
         return view("admin.Kelas.add");
 
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-
-    public function store(Request $request)
+    public function simpan(Request $request)
     {
-        //
+
+        $ng = $request->thumbnail;
+        $namagambar = $ng->getClientOriginalName();
+
+        $data = new Kelas;
+        $data->name_kelas = $request->name_kelas;
+        $data->type_kelas = $request->type_kelas;
+        $data->description_kelas = $request->description_kelas;
+        $data->thumbnail = $namagambar;
+
+        $ng->move(public_path() . '/thumbnail_kelas', $namagambar);
+        $data->save();
+
+        return redirect('/index_kelas');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function detail($id)
     {
-        //
+
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    }
+    public function hapus($id)
+    {
+
+    }
     public function update(Request $request, $id)
     {
-        //
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+
     }
 }
