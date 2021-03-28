@@ -23,4 +23,3 @@ Route::get('/tambah', [BlogController::class , 'create'])->name('tambah_blog');
 Route::get('/admin', [AdminController::class, 'index']);
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
