@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Materi;
 use Illuminate\Http\Request;
 
 class MateriController extends Controller
@@ -14,7 +15,8 @@ class MateriController extends Controller
     public function index()
     {
         //
-        return view('');
+        $mat = Materi::get();
+        return view('admin.materi.listmateri', compact('mat'));
     }
 
     /**
@@ -37,6 +39,18 @@ class MateriController extends Controller
     public function store(Request $request)
     {
         //
+        $konten=new Materi;
+        $konten->judul = $request->name_materi;
+        $konten->konten = $request->content_materi;
+        $konten->save();
+
+        return redirect('/listmateri');
+
+    }
+    public function detail()
+    {
+        //
+        return view('admin.materi.detailmateri');
     }
 
     /**

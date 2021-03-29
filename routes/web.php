@@ -23,3 +23,6 @@ Route::get('/', function () {
 Route::get('/tambah', [BlogController::class , 'create'])->name('tambah_blog');
 Route::get('/admin', [AdminController::class, 'index']);
 Route::get('/materi', [MateriController::class , 'create'])->name('tambah_materi');
+Route::get('/listmateri', [MateriController::class , 'index']);
+Route::post('/storemateri', [MateriController::class , 'store'])->name('data_materi');
+Route::post('/detailmateri', [MateriController::class , 'detail'])->name('detail_materi');
