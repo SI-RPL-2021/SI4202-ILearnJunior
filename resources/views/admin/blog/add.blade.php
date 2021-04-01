@@ -8,6 +8,11 @@
                 <h4>Tambah Data</h4>
             </div>
             <div class="card-body">
+                @if (session('success'))    
+                <div class="alert alert-success" role="alert">
+                    {{session('success')}}
+                </div>
+                @endif
                 <form action="{{route ('store_blog')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">

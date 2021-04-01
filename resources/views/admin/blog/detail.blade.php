@@ -15,6 +15,11 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
+                        @if (session('success'))    
+                <div class="alert alert-success" role="alert">
+                    {{session('success')}}
+                </div>
+                @endif
                         <table>
                             <tr>
                                 <td style="vertical-align: top"></td>

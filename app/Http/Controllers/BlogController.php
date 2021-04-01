@@ -49,7 +49,7 @@ class BlogController extends Controller
         $ng->move(public_path() . '/gambar_blog', $namagambar);
         $data->save();
 
-        return redirect()->back();
+        return redirect()->back()->with('success','Postingan telah disimpan');
     }
 
     /**
@@ -106,7 +106,7 @@ class BlogController extends Controller
         Blog::where('id', '=', $id)->update($data);
 
 
-        return redirect('/postblog');
+        return redirect('/postblog')->with('success','Postingan telah di perbarui');
     }
 
     /**
@@ -120,7 +120,7 @@ class BlogController extends Controller
         //
         $del = Blog::findorfail($id);
         $del->delete();
-        return redirect('/postblog');
+        return redirect('/postblog')->with('success','Postingan Berhasil dihapus');
 
     }
 }

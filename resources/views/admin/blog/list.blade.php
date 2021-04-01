@@ -7,6 +7,11 @@
                 <div class="card-header">
                     <h4>List Postingan Blog</h4>
                 </div>
+                @if (session('success'))    
+                <div class="alert alert-success" role="alert">
+                    {{session('success')}}
+                </div>
+                @endif
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table align-items-center table-hover" ">
