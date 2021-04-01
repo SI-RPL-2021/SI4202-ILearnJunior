@@ -61,7 +61,12 @@ class KelasController extends Controller
     }
     public function update(Request $request, $id)
     {
-
+        $validator = Validator($request->all(), [
+            'name_kelas' => 'required',
+            'type_kelas' => 'required',
+            'description_kelas' => 'required',
+            'thumbnail' => 'mimes:png,jpg,jpeg'
+        ]);
     }
 
     public function destroy($id)
