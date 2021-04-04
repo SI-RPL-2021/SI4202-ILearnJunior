@@ -1,6 +1,6 @@
 @extends('layouts.admin.index')
 @section('content')
-@section('menu', "Buat Postingan Blog")
+@section('menu', "Buat Postingan")
 <div class="row">
     <div class="col-md-12">
         <div class="card">
