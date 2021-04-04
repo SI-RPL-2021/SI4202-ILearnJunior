@@ -27,11 +27,11 @@
             <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Management Blog</span></a>
             <ul class="dropdown-menu">
               <li><a class="nav-link" href="{{route('tambah_blog')}}">Buat Postingan</a></li>
-              <li><a class="nav-link" href="forms-editor.html">Daftar Postingan</a></li>
+              <li><a class="nav-link" href="{{route('listblog')}}">Daftar Postingan</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a href="#" class="nav-link has-dropdown"><i class="fas fa-map-marker-alt"></i> <span>Management Podcast</span></a>
+            <a href="#" class="nav-link has-dropdown"><i class="fas fa-microphone"></i> <span>Management Podcast</span></a>
             <ul class="dropdown-menu">
               <li><a href="gmaps-advanced-route.html">Tambahkan Podcast</a></li>
               <li><a href="gmaps-draggable-marker.html">List Podcast</a></li>
@@ -48,7 +48,7 @@
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a href="#" class="nav-link has-dropdown"><i class="fas fa-plug"></i> <span>Management User</span></a>
+            <a href="#" class="nav-link has-dropdown"><i class="fas fa-users"></i> <span>Management User</span></a>
             <ul class="dropdown-menu">
               <li><a class="nav-link" href="modules-calendar.html">User Terdaftar</a></li>
             </ul>
