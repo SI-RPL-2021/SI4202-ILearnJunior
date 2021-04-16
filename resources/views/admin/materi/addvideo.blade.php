@@ -40,13 +40,6 @@
                         <small class="text-danger">{{ $message }}</small>
                         @enderror
                     </div>
-                    <div class="form-group">
-                        <label for="">Upload Video</label>
-                        <input type="file" name="thumbnail_blog" class="form-control @error('thumbnail_blog') is-invalid @enderror">
-                        @error('thumbnail_blog')
-                        <small class="text-danger">{{ $message }}</small>
-                        @enderror
-                    </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-success">Simpan Video</button>
                     </div>

@@ -22,4 +22,5 @@ Route::get('/', function () {
 
 Route::get('/tambah', [BlogController::class , 'create'])->name('tambah_blog');
 Route::get('/tambah_materi_video', [MateriController::class , 'create'])->name('tambah_materi_video');
+Route::get('/lihat_materi_video', [MateriController::class , 'create'])->name('lihat_materi_video');
 Route::get('/admin', [AdminController::class, 'index']);
