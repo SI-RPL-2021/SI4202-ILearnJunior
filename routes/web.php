@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\MateriController;
 use App\Models\Blog;
 use Illuminate\Support\Facades\Route;
 
@@ -21,10 +22,19 @@ Route::get('/', function () {
 });
 
 Route::get('/admin', [AdminController::class, 'index']);
+
+
+//Management materi video
 Route::get('/tambah', [BlogController::class , 'create'])->name('tambah_blog');
+Route::get('/tambah_materi_video', [MateriController::class , 'create'])->name('tambah_materi_video');
+Route::get('/lihat_materi_video', [MateriController::class , 'create'])->name('lihat_materi_video');
+
+
+//Management blog
 Route::post('/store_blog',[BlogController::class, 'store'])->name('store_blog');
 Route::get('/postblog', [BlogController::class, 'index'])->name('listblog');
 Route::get('/detail_blog/{Blog:id}', [BlogController::class, 'show']);
 Route::get('/edit_blog/{Blog:id}', [BlogController::class, 'edit']);
 Route::post('/update_blog/{Blog:id}', [BlogController::class, 'update']);
 Route::get('/delete_blog/{Blog:id}', [BlogController::class, 'destroy']);
+
