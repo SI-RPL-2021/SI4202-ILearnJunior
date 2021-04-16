@@ -9,8 +9,10 @@
       <!-- Main Content -->
       <div class="main-content">
         <section class="section">
+          <div class="section-header">
+            <h1>Blank Page</h1>
+          </div>
           {{-- ISI DENGAN KONTEN --}}
-          @yield('content')
         </section>
       </div>
       <footer class="main-footer">

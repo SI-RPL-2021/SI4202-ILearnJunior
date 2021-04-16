@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Blog;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -15,8 +14,7 @@ class BlogController extends Controller
     public function index()
     {
         //
-        $blog = Blog::get();
-        return view('admin.blog.list', compact('blog'));
+        return view(''); 
     }
 
     /**
@@ -38,18 +36,7 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        $ng = $request->thumbnail_blog;
-        $namagambar = $ng->getClientOriginalName();
-
-        $data = new Blog;
-        $data->name_blog = $request->name_blog;
-        $data->content_blog = $request->content;
-        $data->thumbnail_blog = $namagambar;
-
-        $ng->move(public_path() . '/gambar_blog', $namagambar);
-        $data->save();
-
-        return redirect()->back()->with('success','Postingan telah disimpan');
+        //
     }
 
     /**
@@ -60,8 +47,7 @@ class BlogController extends Controller
      */
     public function show($id)
     {
-        $blog = Blog::findorfail($id);
-        return view('admin.blog.detail', compact('blog'));
+        //
     }
 
     /**
@@ -73,8 +59,6 @@ class BlogController extends Controller
     public function edit($id)
     {
         //
-        $blog = Blog::findorfail($id);
-        return view('admin.blog.edit', compact('blog'));
     }
 
     /**
@@ -87,26 +71,6 @@ class BlogController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $ubah = Blog::findorfail($id);
-        $nama = $ubah->thumbnail_blog;
-        if ($request->thumbnail_blog <> "") {
-            $gambar = $request->thumbnail_blog;
-            $gambar->move(public_path() . '/gambar_blog', $nama);
-            $data = [
-                'name_blog' => $request->name_blog,
-                'content_blog' => $request->content,
-                'thumbnail_blog' => $nama,
-            ];
-        }else{
-            $data = [
-                'name_blog' => $request->name_blog,
-                'content_blog' => $request->content,
-            ];
-        }
-        Blog::where('id', '=', $id)->update($data);
-
-
-        return redirect('/postblog')->with('success','Postingan telah di perbarui');
     }
 
     /**
@@ -118,9 +82,5 @@ class BlogController extends Controller
     public function destroy($id)
     {
         //
-        $del = Blog::findorfail($id);
-        $del->delete();
-        return redirect('/postblog')->with('success','Postingan Berhasil dihapus');
-
     }
 }
