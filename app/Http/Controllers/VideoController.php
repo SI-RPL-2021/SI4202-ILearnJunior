@@ -3,13 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Video;
 
-class MateriController extends Controller
+class VideoController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        //
-        return view(''); 
+        $listvid = Video::get();
+        return view('admin.video_materi.viewvideo', compact('listvid'));
     }
 
     /**
@@ -19,8 +25,7 @@ class MateriController extends Controller
      */
     public function create()
     {
-        //
-        return view('admin.materi.addvideo');
+        return view('admin.video_materi.addvideo');
     }
 
     /**
@@ -31,7 +36,13 @@ class MateriController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $add = new Video;
+        $add->judulvid = $request->name_video;
+        $add->descvideo = $request->deskripsi_video;
+        $add->linkvideo = $request->link_video;
+        $add->save();
+
+        return redirect()->back()->with('success', 'Link Video Berhasil di Simpan');
     }
 
     /**
@@ -53,7 +64,8 @@ class MateriController extends Controller
      */
     public function edit($id)
     {
-        //
+        $edit = Video::findorfail($id);
+        return view('admin.video_materi.editvideo', compact('edit'));
     }
 
     /**
@@ -65,7 +77,14 @@ class MateriController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $edit = Video::findorfail($id);
+        $data = [
+            'judulvid' => $request->name_video,
+            'descvideo' => $request->deskripsi_video,
+            'linkvideo' => $request->link_video
+        ];
+        Video::where('id', '=', $id)->update($data);
+        return redirect('/video')->with('success', 'Link Video Berhasil di Update');
     }
 
     /**
@@ -76,6 +95,8 @@ class MateriController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $delete = Video::findorfail($id);
+        $delete->delete();
+        return redirect('/video')->with('success', 'Link Video Berhasil di Hapus');
     }
 }
