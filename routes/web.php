@@ -19,9 +19,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/tambah', [BlogController::class , 'create'])->name('tambah_blog');
-Route::get('/tambah_kelas', [KelasController::class , 'create'])->name('tambah_kelas');
-Route::get('/index_kelas', [KelasController::class , 'index']);
-Route::post('/data_kelas', [KelasController::class , 'simpan'])->name('kelas_data');
 Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/tambah', [BlogController::class , 'create'])->name('tambah_blog');
+Route::get('/index_kelas', [KelasController::class , 'index']); //list
+Route::get('/tambah_kelas', [KelasController::class , 'create'])->name('tambah_kelas'); //halaman tambah
+Route::post('/data_kelas', [KelasController::class , 'simpan'])->name('kelas_data'); // store
+Route::get('/edit_kelas/{Kelas:id}', [KelasController::class , 'edit']); // halaman edit
+Route::post('/edit_store/{Kelas:id}', [KelasController::class , 'update']); // store edit
+Route::get('/delete_kelas/{Kelas:id}', [KelasController::class , 'destroy']); // delete

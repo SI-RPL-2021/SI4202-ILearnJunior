@@ -8,13 +8,18 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                <div class="card-header-action">
-                    <a href="tambah_kelas" class="btn btn-primary">
+                <div class="card-header-action ml-auto">
+                    <a href="{{route('tambah_kelas')}}" class="btn btn-primary">
                         Tambah
                     </a>
                 </div>
             </div>
             <div class="card-body">
+                @if (session('success'))
+                <div class="alert alert-success" role="alert">
+                    {{session('success')}}
+                </div>
+                @endif
                 <div class="table-responsive">
                     <table class="table align-items-center table-hover" id="table">
                         <thead class="thead-light">
@@ -23,7 +28,7 @@
                                 <th>Nama Kelas</th>
                                 <th>Tipe Kelas</th>
                                 <th>Thumbnail</th>
-                                <th width="10%">Aksi</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -39,11 +44,11 @@
                                     {{$kelas->type_kelas}}
                                 </td>
                                 <td>
-                                    <img src="{{asset('thumbnail_kelas/'. $kelas->thumbnail)}}" width="200" alt="" srcset="">
+                                    <img src="{{asset('thumbnail_kelas/'. $kelas->thumbnail)}}" width="200" alt="">
                                 </td>
                                 <td>
-                                    <a href=""
-                                        class="btn btn-warning">Detail</a>
+                                    <a href="/edit_kelas/{{$kelas->id}}" class="btn btn-success">Edit</a>
+                                    <a href="/delete_kelas/{{$kelas->id}}" class="btn btn-danger">Delete</a>
                                 </td>
                         </tbody>
                         @endforeach

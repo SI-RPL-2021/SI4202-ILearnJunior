@@ -32,15 +32,15 @@ class KelasController extends Controller
     {
 
         $ng = $request->thumbnail;
-        $namagambar = $ng->getClientOriginalName();
+        $namagr = $ng->getClientOriginalName();
 
         $data = new Kelas;
         $data->name_kelas = $request->name_kelas;
         $data->type_kelas = $request->type_kelas;
         $data->description_kelas = $request->description_kelas;
-        $data->thumbnail = $namagambar;
+        $data->thumbnail = $namagr;
 
-        $ng->move(public_path() . '/thumbnail_kelas', $namagambar);
+        $ng->move(public_path() . '/thumbnail_kelas', $namagr);
         $data->save();
 
         return redirect('/index_kelas');
@@ -53,7 +53,8 @@ class KelasController extends Controller
 
     public function edit($id)
     {
-
+        $kelas = Kelas::findorfail($id);
+        return view('admin.Kelas.edit', compact('kelas'));
     }
     public function hapus($id)
     {
@@ -61,16 +62,32 @@ class KelasController extends Controller
     }
     public function update(Request $request, $id)
     {
-        $validator = Validator($request->all(), [
-            'name_kelas' => 'required',
-            'type_kelas' => 'required',
-            'description_kelas' => 'required',
-            'thumbnail' => 'mimes:png,jpg,jpeg'
-        ]);
+        $ubahkelas = Kelas::findorfail($id);
+        $namagambar = $ubahkelas->thumbnail;
+        if($request->thumbnail <> "") {
+            $gambar = $request->thumbnail;
+            $gambar->move(public_path() . '/thumbnail_kelas', $namagambar);
+            $data = [
+                'name_kelas' => $request->name_kelas,
+                'type_kelas' => $request->type_kelas,
+                'description_kelas' => $request->description_kelas,
+                'thumbnail' => $namagambar,
+            ];
+        }else{
+            $data = [
+                'name_kelas' => $request->name_kelas,
+                'type_kelas' => $request->type_kelas,
+                'description_kelas' => $request->description_kelas,
+            ];
+        }
+        Kelas::where('id', '=' , $id)->update($data);
+        return redirect('/index_kelas')->with('success','Data Berhasil di update');
     }
 
     public function destroy($id)
     {
-
+        $kelas = Kelas::findorfail($id);
+        $kelas->delete();
+        return redirect('/index_kelas')->with('success','Data Berhasil di Hapus');
     }
 }

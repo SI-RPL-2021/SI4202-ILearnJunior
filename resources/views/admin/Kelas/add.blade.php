@@ -6,9 +6,6 @@
             <div class="card-header">
                 <h4>Tambah</h4>
                 <div class="card-header-action">
-                    <button id="btn-back" class="btn btn-primary">
-                        Kembali
-                    </button>
                 </div>
             </div>
             <div class="card-body">
