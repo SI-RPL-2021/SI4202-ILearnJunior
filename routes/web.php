@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\MateriController;
 use App\Http\Controllers\VideoController;
 use App\Models\Blog;
 use Illuminate\Support\Facades\Route;
@@ -32,6 +33,14 @@ Route::get('/editvideo/{Video:id}', [VideoController::class, 'edit']);
 Route::post('/updatevideo/{Video:id}', [VideoController::class, 'update']);
 Route::get('/delete/{Video:id}', [VideoController::class, 'destroy']);
 
+//Management materi
+Route::get('/materi', [MateriController::class , 'create'])->name('tambah_materi');
+Route::get('/listmateri', [MateriController::class , 'index'])->name('listmateri');
+Route::post('/storemateri', [MateriController::class , 'store'])->name('data_materi');
+Route::get('/detailmateri/{mat:id}', [MateriController::class, 'show'])->name('detailmateri');
+Route::get('/editmateri/{mat:id}', [MateriController::class, 'edit']);
+Route::post('/updatemateri/{mat:id}', [MateriController::class, 'update']);
+Route::get('/deletemateri/{mat:id}', [MateriController::class, 'destroy']);
 
 //Management blog
 Route::get('/tambah', [BlogController::class, 'create'])->name('tambah_blog');

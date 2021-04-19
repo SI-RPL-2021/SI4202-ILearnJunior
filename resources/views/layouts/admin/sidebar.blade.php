@@ -43,7 +43,8 @@
         <ul class="dropdown-menu">
           <li><a class="nav-link" href="{{route('addvideo')}}">Post Materi Video</a></li>
           <li><a class="nav-link" href="/video">List Materi Video</a></li>
-
+          <li><a class="nav-link" href="{{route('tambah_materi')}}">Buat Materi Baru</a></li>
+          <li><a class="nav-link" href="/listmateri">Daftar Materi</a></li>
         </ul>
       </li>
       <li class="nav-item dropdown">
