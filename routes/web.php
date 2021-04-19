@@ -18,8 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
+Auth::routes();
 Route::get('/tambah', [BlogController::class , 'create'])->name('tambah_blog');
 Route::get('/admin', [AdminController::class, 'index']);
-Auth::routes();
 
