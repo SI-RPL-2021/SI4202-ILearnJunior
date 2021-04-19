@@ -19,8 +19,8 @@
       <li class="nav-item dropdown">
         <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i> <span>Management Kelas</span></a>
         <ul class="dropdown-menu">
-          <li><a class="nav-link" href="components-article.html">Tambah Kelas</a></li>
-          <li><a class="nav-link beep beep-sidebar" href="components-avatar.html">Lihat Kelas</a></li>
+          <li><a class="nav-link" href="{{route('tambah_kelas')}}">Tambah Kelas</a></li>
+          <li><a class="nav-link beep beep-sidebar" href="/index_kelas">Lihat Kelas</a></li>
         </ul>
       </li>
       <li class="nav-item dropdown">
@@ -41,10 +41,10 @@
       <li class="nav-item dropdown">
         <a href="#" class="nav-link has-dropdown"><i class="fas fa-plug"></i> <span>Management Materi Pelajaran</span></a>
         <ul class="dropdown-menu">
-          <li><a class="nav-link" href="{{route('addvideo')}}">Post Materi Video</a></li>
-          <li><a class="nav-link" href="/video">List Materi Video</a></li>
           <li><a class="nav-link" href="{{route('tambah_materi')}}">Buat Materi Baru</a></li>
           <li><a class="nav-link" href="/listmateri">Daftar Materi</a></li>
+          <li><a class="nav-link" href="{{route('addvideo')}}">Post Materi Video</a></li>
+          <li><a class="nav-link" href="/video">List Materi Video</a></li>
         </ul>
       </li>
       <li class="nav-item dropdown">
