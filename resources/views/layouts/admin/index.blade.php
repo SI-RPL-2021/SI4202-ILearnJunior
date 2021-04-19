@@ -7,8 +7,12 @@
 @include('layouts/admin/navbar')
 @include('layouts/admin/sidebar')
       <!-- Main Content -->
+    <div class="row">
       <div class="main-content">
         <section class="section">
+          <div class="section-header">
+            <h1>@yield('menu')</h1>
+          </div>
           {{-- ISI DENGAN KONTEN --}}
           @yield('content')
         </section>
