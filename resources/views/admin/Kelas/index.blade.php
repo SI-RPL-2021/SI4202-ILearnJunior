@@ -27,6 +27,7 @@
                                 <th>No</th>
                                 <th>Nama Kelas</th>
                                 <th>Tipe Kelas</th>
+                                <th>Deskripsi</th>
                                 <th>Thumbnail</th>
                                 <th>Aksi</th>
                             </tr>
@@ -43,6 +44,7 @@
                                 <td>
                                     {{$kelas->type_kelas}}
                                 </td>
+                                <td>{{$kelas->description_kelas}}</td>
                                 <td>
                                     <img src="{{asset('thumbnail_kelas/'. $kelas->thumbnail)}}" width="200" alt="">
                                 </td>
