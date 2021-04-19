@@ -28,10 +28,7 @@
                     </div>
                     <div class="form-group">
                         <label for="">Deskripsi Video</label>
-                        <textarea name="deskripsi_video" class="form-control" id="floatingTextarea2" style="height: 100px">
-                        {{$edit->descvideo}}
-                        </textarea>
-
+                        <textarea name="deskripsi_video" class="form-control" id="floatingTextarea2" style="height: 100px">{{$edit->descvideo}}</textarea>
                     </div>
                     <div class="form-group">
                         <label for="">Link Video</label>

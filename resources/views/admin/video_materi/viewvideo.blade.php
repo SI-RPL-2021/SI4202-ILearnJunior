@@ -9,9 +9,6 @@
             <div class="card-header">
                 <h4>List Postingan Video</h4>
                 <div class="card-header-action">
-                    <button id="btn-back" class="btn btn-primary">
-                        Kembali
-                    </button>
                 </div>
             </div>
             @if (session('success'))
@@ -24,12 +21,12 @@
                     <table class="table align-items-center table-hover" ">
                                 <th>No</th>
                                 <th>Nama Video</th>
-                                <th>Description Video</th>
+                                <th>Deskripsi Video</th>
                                 <th>Link Video</th>
                                 <th>Action</th>
                                 <tbody>
                                     <?php $index = 1; ?>
-                                     @foreach ($listvid as $lv)
+                                    @foreach ($listvid as $lv)
                             <td>{{ $index++ }}</td>
                             
                         <td>{{$lv -> judulvid}}</td>
