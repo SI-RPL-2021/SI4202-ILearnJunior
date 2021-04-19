@@ -8,6 +8,9 @@
                     <h4>List Materi</h4>
                 </div>
                 <div class="card-body">
+                @if(session('success'))
+                <div class="alert alert-success" role = 'alert'>{{session('success')}}</div>
+                @endif
                     <div class="table-responsive">
                         <table class="table align-items-center table-hover">
                                 <th>No</th>
@@ -19,7 +22,7 @@
                             <td>{{ $index++ }}</td>
                             <td>{{ $post->judul }}</td>
                             <td>
-                                <a href="/detail_blog/{{ $post->id }}"class="btn btn-sm btn-success">Detail</a>
+                                <a href="/detailmateri/{{ $post->id }}"class="btn btn-sm btn-success">Detail</a>
                             </td>
                             </tbody>
                             @endforeach

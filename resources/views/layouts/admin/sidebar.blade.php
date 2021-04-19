@@ -26,8 +26,8 @@
           <li class="nav-item dropdown">
             <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Management Materi</span></a>
             <ul class="dropdown-menu">
-              <li><a class="nav-link" href="{{route('tambah_materi')}}">Buat Postingan</a></li>
-              <li><a class="nav-link" href="/listmateri">Daftar Postingan</a></li>
+              <li><a class="nav-link" href="{{route('tambah_materi')}}">Buat Materi Baru</a></li>
+              <li><a class="nav-link" href="/listmateri">Daftar Materi</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">

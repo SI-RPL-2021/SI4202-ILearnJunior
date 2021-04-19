@@ -39,18 +39,12 @@ class MateriController extends Controller
     public function store(Request $request)
     {
         //
-        $konten=new Materi;
+        $konten = new Materi;
         $konten->judul = $request->name_materi;
         $konten->konten = $request->content_materi;
         $konten->save();
 
-        return redirect('/listmateri');
-
-    }
-    public function detail()
-    {
-        //
-        return view('admin.materi.detailmateri');
+        return redirect('/listmateri')->with('success','Materi berhasil dibuat');
     }
 
     /**
@@ -61,7 +55,8 @@ class MateriController extends Controller
      */
     public function show($id)
     {
-        //
+        $mat = Materi::findorfail($id);
+        return view('admin.materi.detailmateri', compact('mat'));
     }
 
     /**
@@ -73,6 +68,8 @@ class MateriController extends Controller
     public function edit($id)
     {
         //
+        $mat = Materi::findorfail($id);
+        return view('admin.materi.editmateri', compact('mat'));
     }
 
     /**
@@ -85,6 +82,14 @@ class MateriController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $data = [
+            'judul' => $request->judul,
+            'konten' => $request->konten,
+        ];
+        Materi::where('id', '=', $id)->update($data);
+
+
+        return redirect()->route('detailmateri', ['mat' => $id])->with('success', 'Materi berhasil diperbarui');
     }
 
     /**
@@ -96,5 +101,9 @@ class MateriController extends Controller
     public function destroy($id)
     {
         //
+        $del = Materi::findorfail($id);
+        $del->delete();
+        return redirect('/listmateri')->with('success','Materi berhasil dihapus');
+
     }
 }
