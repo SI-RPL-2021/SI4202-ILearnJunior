@@ -5,7 +5,7 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                <h4>Tambah Data</h4>
+                <h4>Update Data</h4>
                 <div class="card-header-action">
                     <a href="/detail_blog/{{$blog->id}}" class="btn btn-sm btn-primary">Kembali</a>
                 </div>

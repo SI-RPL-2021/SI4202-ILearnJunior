@@ -8,6 +8,8 @@
         <div class="card">
             <div class="card-header">
                 <h4>List Postingan Video</h4>
+                <div class="card-header-action">
+                </div>
             </div>
             @if (session('success'))
             <div class="alert alert-success" role="alert">

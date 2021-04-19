@@ -8,6 +8,11 @@
         <div class="card">
             <div class="card-header">
                 <h4>Edit Materi Video</h4>
+                <div class="card-header-action">
+                    <button id="btn-back" class="btn btn-primary">
+                        Kembali
+                    </button>
+                </div>
             </div>
             <div class="card-body">
                 @if(session('success'))
