@@ -2,24 +2,19 @@
 @section('content')
 <div class="section-header">
     <h1>Buat Postingan Video</h1>
-  </div>
+</div>
 <div class="row">
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
                 <h4>Tambah Materi Video</h4>
-                <div class="card-header-action">
-                    <button id="btn-back" class="btn btn-primary">
-                        Kembali
-                    </button>
-                </div>
             </div>
             <div class="card-body">
-        @if(session('success'))
-        <div class="alert alert-success" role = 'alert '>
-        {{session('success')}}
-        </div>
-        @endif
+                @if(session('success'))
+                <div class="alert alert-success" role='alert '>
+                    {{session('success')}}
+                </div>
+                @endif
                 <form action="{{route('storevideo')}}" method="post">
                     @csrf
                     <div class="form-group">
@@ -29,7 +24,7 @@
                     <div class="form-group">
                         <label for="">Deskripsi Video</label>
                         <textarea name="deskripsi_video" class="form-control" id="floatingTextarea2" style="height: 100px"></textarea>
-                        
+
                         </textarea>
                     </div>
                     <div class="form-group">

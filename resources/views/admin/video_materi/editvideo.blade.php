@@ -8,11 +8,6 @@
         <div class="card">
             <div class="card-header">
                 <h4>Edit Materi Video</h4>
-                <div class="card-header-action">
-                    <button id="btn-back" class="btn btn-primary">
-                        Kembali
-                    </button>
-                </div>
             </div>
             <div class="card-body">
                 @if(session('success'))
@@ -28,10 +23,7 @@
                     </div>
                     <div class="form-group">
                         <label for="">Deskripsi Video</label>
-                        <textarea name="deskripsi_video" class="form-control" id="floatingTextarea2" style="height: 100px">
-                        {{$edit->descvideo}}
-                        </textarea>
-
+                        <textarea name="deskripsi_video" class="form-control" id="floatingTextarea2" style="height: 100px">{{$edit->descvideo}}</textarea>
                     </div>
                     <div class="form-group">
                         <label for="">Link Video</label>
