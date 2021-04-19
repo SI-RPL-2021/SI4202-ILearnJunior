@@ -10,7 +10,7 @@
             <div class="card-header">
                 <div class="card-header-action ml-auto">
                     <a href="{{route('tambah_kelas')}}" class="btn btn-primary">
-                        Tambah
+                        Tambah Kelas
                     </a>
                 </div>
             </div>
