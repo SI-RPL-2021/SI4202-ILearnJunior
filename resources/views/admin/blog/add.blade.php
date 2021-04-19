@@ -1,21 +1,19 @@
 @extends('layouts.admin.index')
 @section('content')
-<div class="section-header">
-    <h1>Buat Postingan Blog</h1>
-  </div>
+@section('menu', "Buat Postingan")
 <div class="row">
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
                 <h4>Tambah Data</h4>
-                <div class="card-header-action">
-                    <button id="btn-back" class="btn btn-primary">
-                        Kembali
-                    </button>
-                </div>
             </div>
             <div class="card-body">
-                <form action="#" method="post" enctype="multipart/form-data">
+                @if (session('success'))    
+                <div class="alert alert-success" role="alert">
+                    {{session('success')}}
+                </div>
+                @endif
+                <form action="{{route ('store_blog')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="">Judul</label>
@@ -23,7 +21,7 @@
                     </div>
                     <div class="form-group">
                         <label for="">Konten</label>
-                        <textarea name="content_blog" class="form-control" id="floatingTextarea2" style="height: 100px"></textarea>
+                        <textarea name="content" class="form-control" id="floatingTextarea2" style="height: 100px"></textarea>
                         {{ old('content_blog') }}
                         </textarea>
                     </div>
