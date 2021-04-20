@@ -13,8 +13,8 @@
         <div class="alert alert-success" role = 'alert '>
         {{session('success')}}
         </div>
-            <div class="card-body">
         @endif
+            <div class="card-body">
                 <form action="{{route('storevideo')}}" method="post">
                     @csrf
                     <div class="form-group">

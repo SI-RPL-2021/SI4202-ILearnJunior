@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('landing');
 });
+Route::get('/welcome', function () {
+    return view('welcome');
+});
 Auth::routes();
 Route::get('/admin', [AdminController::class, 'index']);
 Route::get('/logout',[LoginController::class, 'logout'])->name('logout');
