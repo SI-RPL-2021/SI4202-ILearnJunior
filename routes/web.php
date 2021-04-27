@@ -2,18 +2,23 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\MateriController;
 use App\Http\Controllers\VideoController;
+use App\Http\Controllers\LoginController;
 use App\Models\Blog;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
+    return view('landing');
+});
+Route::get('/welcome', function () {
     return view('welcome');
 });
-
 Auth::routes();
 Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/logout',[LoginController::class, 'logout'])->name('logout');
 
 //Management Kelas
 Route::get('/index_kelas', [KelasController::class , 'index']); //list
