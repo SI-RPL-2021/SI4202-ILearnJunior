@@ -7,6 +7,7 @@ use App\Http\Controllers\KelasController;
 use App\Http\Controllers\MateriController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Client\IndexController;
 use App\Models\Blog;
 use Illuminate\Support\Facades\Route;
 
@@ -53,3 +54,8 @@ Route::get('/detail_blog/{Blog:id}', [BlogController::class, 'show']);
 Route::get('/edit_blog/{Blog:id}', [BlogController::class, 'edit']);
 Route::post('/update_blog/{Blog:id}', [BlogController::class, 'update']);
 Route::get('/delete_blog/{Blog:id}', [BlogController::class, 'destroy']);
+
+
+// Routing Client
+
+Route::get('/home',[IndexController::class,'index']);
