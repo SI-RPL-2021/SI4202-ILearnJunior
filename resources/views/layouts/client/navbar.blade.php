@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-gradient">
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
     <a href="/">
         <img src="https://i.ibb.co/HBdgfxn/logo-i-learn-junior.png" alt="logo-iLearn" width="55" class="ml-4">
     </a>
@@ -12,10 +12,10 @@
               <a class="nav-link text-white" href="#">ABOUT</a>
             </li>
             <li class="nav-item mr-3">
-              <a class="nav-link text-white" href="/login">LOGIN</a>
+              <a class="nav-link text-white" href="#">LOGIN</a>
             </li>
             <li class="nav-item mr-3">
-              <a class="nav-link text-white" href="{{ route('register') }}">REGISTER</a>
+              <a class="nav-link text-white" href="#">REGISTER</a>
             </li>
         @else
       <ul class="navbar-nav ml-auto mr-5 ">
