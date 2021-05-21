@@ -14,7 +14,7 @@
                 @endif
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table align-items-center table-hover" ">
+                        <table class="table align-items-center table-hover">
                                 <th>No</th>
                                 <th>Thumbnail Blog</th>
                                 <th>Nama Post</th>

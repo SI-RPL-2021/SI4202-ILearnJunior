@@ -9,24 +9,12 @@
             <div class="card-header">
                 <h4>Tambah Materi Video</h4>
             </div>
-            <div class="card-body">
-                @if(session('success'))
-                <div class="alert alert-success" role='alert '>
-                    {{session('success')}}
-                </div>
-                @endif
-                <div class="card-header-action">
-                    <button id="btn-back" class="btn btn-primary">
-                        Kembali
-                    </button>
-                </div>
-            </div>
-            <div class="card-body">
         @if(session('success'))
         <div class="alert alert-success" role = 'alert '>
         {{session('success')}}
         </div>
         @endif
+            <div class="card-body">
                 <form action="{{route('storevideo')}}" method="post">
                     @csrf
                     <div class="form-group">
