@@ -1,6 +1,9 @@
 /node_modules
 /public/hot
 /public/storage
+/public/file
+/public/thumbnail_kelas
+/public/gambar_blog
 /storage/*.key
 /vendor
 .env

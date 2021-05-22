@@ -3,11 +3,9 @@
 @include('layouts/client/header')
 <body>
   @include('layouts/client/navbar')
-  <div class="container">  
-    <div class="row">
+  <div class="py-5"></div>
       @yield('content')
-    </div>
-  </div>
+
 @include('layouts/client/cdnjs') 
 </body>
 </html>
