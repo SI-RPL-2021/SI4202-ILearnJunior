@@ -68,3 +68,6 @@ Route::post('/index_nilai', [InputNilaiController::class , 'store']);
 Route::get('/home', [IndexController::class, 'index']);
 Route::get('/view_materi', [ViewMateriController::class, 'index']);
 Route::get('/detail_materi/{mat:id}', [ViewMateriController::class, 'detail']);
+
+//Tampilan Nilai User
+Route::get('/TampilanNilai', [InputNilaiController::class , 'Tampilan']);

@@ -18,6 +18,12 @@ class InputNilaiController extends Controller
         return view("admin.nilai.index", compact('inputnilai'));
     }
 
+    public function Tampilan()
+    {
+        $inputnilai = InputNilai::get();
+        return view("client.TampilanNilai", compact('inputnilai'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
