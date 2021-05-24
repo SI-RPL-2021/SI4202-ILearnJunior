@@ -64,7 +64,12 @@ Route::get('/input_nilai', [InputNilaiController::class , 'create'])->name('inpu
 Route::post('/index_nilai', [InputNilaiController::class , 'store']);
 
 // Routing Client
+Route::get('/home',[IndexController::class,'index']);
 
-Route::get('/home', [IndexController::class, 'index']);
+//Pengumpulan tugas Route
+Route::get('/upload',[TugasController::class,'index']);
+Route::post('/upload',[TugasController::class,'upload'])->name('upload.post');
+Route::get('/list',[TugasController::class,'listtugas'])->name('list_tugas');
+//view materi
 Route::get('/view_materi', [ViewMateriController::class, 'index']);
 Route::get('/detail_materi/{mat:id}', [ViewMateriController::class, 'detail']);
