@@ -53,6 +53,12 @@
           <li><a class="nav-link" href="modules-calendar.html">User Terdaftar</a></li>
         </ul>
       </li>
+      <li class="nav-item dropdown">
+        <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i> <span>Pengumpulan Tugas</span></a>
+        <ul class="dropdown-menu">
+          <li><a class="nav-link" href="{{route('list_tugas')}}">List Pengumpulan</a></li>
+        </ul>
+      </li>
     </ul>
   </aside>
 </div>

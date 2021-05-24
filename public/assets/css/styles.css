@@ -52,7 +52,3 @@
       .bg-gradient{
             background: rgb(53, 95, 121);
             background: linear-gradient(90deg, rgb(53, 95, 121) 38%, rgba(230,57,70,1) 100%) !important;}
-            
-            .navbar.transparent.navbar-inverse .navbar-inner {
-              background: rgba(0,0,0,0.4);
-           }

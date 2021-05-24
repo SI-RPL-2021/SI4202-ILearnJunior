@@ -63,3 +63,5 @@ Route::get('/home',[IndexController::class,'index']);
 //Pengumpulan tugas Route
 Route::get('/upload',[TugasController::class,'index']);
 Route::post('/upload',[TugasController::class,'upload'])->name('upload.post');
+Route::get('/list',[TugasController::class,'listtugas'])->name('list_tugas');
+

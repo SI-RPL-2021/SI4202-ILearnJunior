@@ -31,4 +31,8 @@ class TugasController extends Controller
             ->with('success','You have successfully file upload.')
             ->with('file',$filesname); 
     }
+    public function listtugas(){
+        $tugas  = Tugas::get();
+        return view('admin.tugas.list_tugas', compact('tugas'));
+    }
 }

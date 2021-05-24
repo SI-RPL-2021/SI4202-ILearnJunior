@@ -17,7 +17,7 @@ class CreateTugasTable extends Migration
             $table->id();
             // $table->foreign('user_id');
             $table->string('name');
-            $table->string('file');
+            $table->string('file')->nullable();
             $table->timestamps();
         });
     }
