@@ -2,16 +2,13 @@
 @section('content')
 
 <div class="section-header">
-    <h1>Management Kelas</h1>
+    <h1>Input Nilai</h1>
 </div>
 <div class="row">
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
                 <div class="card-header-action ml-auto">
-                    <a href="{{route('tambah_kelas')}}" class="btn btn-primary">
-                        Tambah Kelas
-                    </a>
                 </div>
             </div>
             <div class="card-body">
@@ -25,32 +22,31 @@
                         <thead class="thead-light">
                             <tr>
                                 <th>No</th>
-                                <th>Nama Kelas</th>
-                                <th>Tipe Kelas</th>
-                                <th>Deskripsi</th>
-                                <th>Thumbnail</th>
-                                <th>Aksi</th>
+                                <th>Nama Siswa</th>
+                                <th>Kelas</th>
+                                <th>Mata Pelajaran</th>
+                                <th>Nilai</th>
+                                <th>Keterangan</th>
+                                <th>Bukti</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php $index = 1; ?>
-                                     @foreach ($kls as $kelas)
+                                     @foreach ($inputnilai as $inputnilai)
                                 <td>
                                     {{$index++}}
                                 </td>
                                 <td>
-                                    {{$kelas->name_kelas}}
+                                    {{$inputnilai->nama_siswa}}
                                 </td>
                                 <td>
-                                    {{$kelas->type_kelas}}
+                                    {{$inputnilai->kelas}}
                                 </td>
-                                <td>{{$kelas->description_kelas}}</td>
+                                <td>{{$inputnilai->mapel}}</td>
+                                <td>{{$inputnilai->nilai}}</td>
+                                <td>{{$inputnilai->keterangan}}</td>
                                 <td>
-                                    <img src="{{asset('thumbnail_kelas/'. $kelas->thumbnail)}}" width="200" alt="">
-                                </td>
-                                <td>
-                                    <a href="/edit_kelas/{{$kelas->id}}" class="btn btn-success">Edit</a>
-                                    <a href="/delete_kelas/{{$kelas->id}}" class="btn btn-danger">Delete</a>
+                                    <img src="{{asset('bukti/'. $inputnilai->bukti)}}" width="100" alt="">
                                 </td>
                         </tbody>
                         @endforeach

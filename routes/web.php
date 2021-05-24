@@ -7,9 +7,11 @@ use App\Http\Controllers\KelasController;
 use App\Http\Controllers\MateriController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\InputNilaiController;
 use App\Http\Controllers\Client\IndexController;
 use App\Http\Controllers\Client\ViewMateriController;
 use App\Models\Blog;
+use App\Models\InputNilai;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -56,6 +58,10 @@ Route::get('/edit_blog/{Blog:id}', [BlogController::class, 'edit']);
 Route::post('/update_blog/{Blog:id}', [BlogController::class, 'update']);
 Route::get('/delete_blog/{Blog:id}', [BlogController::class, 'destroy']);
 
+//Input Nilai
+Route::get('/index', [InputNilaiController::class , 'index']);
+Route::get('/input_nilai', [InputNilaiController::class , 'create'])->name('input_nilai');
+Route::post('/index_nilai', [InputNilaiController::class , 'store']);
 
 // Routing Client
 
