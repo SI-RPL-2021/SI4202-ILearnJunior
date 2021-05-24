@@ -74,3 +74,6 @@ Route::get('/list',[TugasController::class,'listtugas'])->name('list_tugas');
 //view materi
 Route::get('/view_materi', [ViewMateriController::class, 'index']);
 Route::get('/detail_materi/{mat:id}', [ViewMateriController::class, 'detail']);
+
+//Tampilan Nilai User
+Route::get('/TampilanNilai', [InputNilaiController::class , 'Tampilan']);
