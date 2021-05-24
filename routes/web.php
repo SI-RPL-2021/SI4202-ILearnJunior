@@ -10,6 +10,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\InputNilaiController;
 use App\Http\Controllers\Client\IndexController;
 use App\Http\Controllers\Client\ViewMateriController;
+use App\Http\Controllers\Client\TugasController;
 use App\Models\Blog;
 use App\Models\InputNilai;
 use Illuminate\Support\Facades\Route;
