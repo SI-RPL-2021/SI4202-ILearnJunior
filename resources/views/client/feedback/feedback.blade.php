@@ -22,7 +22,7 @@
                             </ul>
                         </div>
                     @endif
-                    <form action="{{route('upload.post')}}" method="post" enctype="multipart/form-data">
+                    <form action="{{route('store')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label for="name">Name</label>
@@ -39,7 +39,7 @@
                     <hr>
                     <div class="row">
                         <div class="ml-auto mr-5">
-                            <button type="submit" class="btn btn-primary">Upload</button>
+                            <button type="submit" class="btn btn-primary">Sent it!</button>
                         </div>
                     </div>
                 </form>

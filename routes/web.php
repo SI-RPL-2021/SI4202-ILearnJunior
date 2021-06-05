@@ -81,4 +81,5 @@ Route::get('/TampilanNilai', [InputNilaiController::class , 'Tampilan']);
 
 //Feedback Route
 Route::get('/feedback', [FeedbackController::class,'index']);
-Route::post('/feedbackstore',[FeedbackController::class,'store']);
+Route::post('/feedbackstore',[FeedbackController::class,'store'])->name('store');
+Route::get('/listfeed', [FeedbackController::class,'show']);
