@@ -20,7 +20,7 @@ class FeedbackController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'feedback' => $request->feedback,
-        ]);
+        ]);  
         return back()->with('success','You feedback have successfully sent!.');
     }
 }
