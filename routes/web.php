@@ -11,6 +11,7 @@ use App\Http\Controllers\InputNilaiController;
 use App\Http\Controllers\Client\IndexController;
 use App\Http\Controllers\Client\ViewMateriController;
 use App\Http\Controllers\Client\TugasController;
+use App\Http\Controllers\FeedbackController;
 use App\Models\Blog;
 use App\Models\InputNilai;
 use Illuminate\Support\Facades\Route;
@@ -77,3 +78,8 @@ Route::get('/detail_materi/{mat:id}', [ViewMateriController::class, 'detail']);
 
 //Tampilan Nilai User
 Route::get('/TampilanNilai', [InputNilaiController::class , 'Tampilan']);
+
+//Feedback Route
+Route::get('/feedback', [FeedbackController::class,'index']);
+Route::post('/feedbackstore',[FeedbackController::class,'store'])->name('store');
+Route::get('/listfeed', [FeedbackController::class,'show']);

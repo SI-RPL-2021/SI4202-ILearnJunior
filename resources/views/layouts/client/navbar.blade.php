@@ -9,6 +9,9 @@
         @guest
             <ul class="navbar-nav ml-auto mr-5 ">
             <li class="nav-item mr-3">
+                <a class="nav-link text-white" href="/feedback">FEEDBACK</a>
+            </li>
+            <li class="nav-item mr-3">
               <a class="nav-link text-white" href="#">ABOUT</a>
             </li>
             <li class="nav-item mr-3">
@@ -19,6 +22,9 @@
             </li>
         @else
       <ul class="navbar-nav ml-auto mr-5 ">
+        <li class="nav-item mr-3">
+          <a class="nav-link text-white" href="/feedback">FEEDBACK</a>
+        </li>
         <li class="nav-item mr-3">
           <a class="nav-link text-white" href="#">FORUM</a>
         </li>
