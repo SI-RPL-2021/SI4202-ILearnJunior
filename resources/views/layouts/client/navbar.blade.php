@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+<nav class="navbar navbar-expand-lg navbar-light bg-gradient fixed-top">
     <a href="/">
         <img src="https://i.ibb.co/HBdgfxn/logo-i-learn-junior.png" alt="logo-iLearn" width="55" class="ml-4">
     </a>

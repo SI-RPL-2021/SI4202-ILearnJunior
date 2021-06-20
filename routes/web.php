@@ -9,8 +9,10 @@ use App\Http\Controllers\VideoController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\InputNilaiController;
 use App\Http\Controllers\Client\IndexController;
-use App\Models\Blog;
-use App\Models\InputNilai;
+use App\Http\Controllers\Client\ViewMateriController;
+use App\Http\Controllers\Client\TugasController;
+use App\Http\Controllers\ForumController;
+use App\Http\Controllers\ReplyController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -21,15 +23,15 @@ Route::get('/welcome', function () {
 });
 Auth::routes();
 Route::get('/admin', [AdminController::class, 'index']);
-Route::get('/logout',[LoginController::class, 'logout'])->name('logout');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 //Management Kelas
-Route::get('/index_kelas', [KelasController::class , 'index']); //list
-Route::get('/tambah_kelas', [KelasController::class , 'create'])->name('tambah_kelas'); //halaman tambah
-Route::post('/data_kelas', [KelasController::class , 'simpan'])->name('kelas_data'); // store
-Route::get('/edit_kelas/{Kelas:id}', [KelasController::class , 'edit']); // halaman edit
-Route::post('/edit_store/{Kelas:id}', [KelasController::class , 'update']); // store edit
-Route::get('/delete_kelas/{Kelas:id}', [KelasController::class , 'destroy']); // delete
+Route::get('/index_kelas', [KelasController::class, 'index']); //list
+Route::get('/tambah_kelas', [KelasController::class, 'create'])->name('tambah_kelas'); //halaman tambah
+Route::post('/data_kelas', [KelasController::class, 'simpan'])->name('kelas_data'); // store
+Route::get('/edit_kelas/{Kelas:id}', [KelasController::class, 'edit']); // halaman edit
+Route::post('/edit_store/{Kelas:id}', [KelasController::class, 'update']); // store edit
+Route::get('/delete_kelas/{Kelas:id}', [KelasController::class, 'destroy']); // delete
 
 //Management materi video
 Route::get('/tambah_materi_video', [VideoController::class, 'create'])->name('addvideo');
@@ -40,9 +42,9 @@ Route::post('/updatevideo/{Video:id}', [VideoController::class, 'update']);
 Route::get('/delete/{Video:id}', [VideoController::class, 'destroy']);
 
 //Management materi
-Route::get('/materi', [MateriController::class , 'create'])->name('tambah_materi');
-Route::get('/listmateri', [MateriController::class , 'index'])->name('listmateri');
-Route::post('/storemateri', [MateriController::class , 'store'])->name('data_materi');
+Route::get('/materi', [MateriController::class, 'create'])->name('tambah_materi');
+Route::get('/listmateri', [MateriController::class, 'index'])->name('listmateri');
+Route::post('/storemateri', [MateriController::class, 'store'])->name('data_materi');
 Route::get('/detailmateri/{mat:id}', [MateriController::class, 'show'])->name('detailmateri');
 Route::get('/editmateri/{mat:id}', [MateriController::class, 'edit']);
 Route::post('/updatemateri/{mat:id}', [MateriController::class, 'update']);
@@ -63,5 +65,27 @@ Route::get('/input_nilai', [InputNilaiController::class , 'create'])->name('inpu
 Route::post('/index_nilai', [InputNilaiController::class , 'store']);
 
 // Routing Client
-
 Route::get('/home',[IndexController::class,'index']);
+
+//Pengumpulan tugas Route
+Route::get('/upload',[TugasController::class,'index']);
+Route::post('/upload',[TugasController::class,'upload'])->name('upload.post');
+Route::get('/list',[TugasController::class,'listtugas'])->name('list_tugas');
+//view materi
+Route::get('/view_materi', [ViewMateriController::class, 'index']);
+Route::get('/detail_materi/{mat:id}', [ViewMateriController::class, 'detail']);
+
+//Tampilan Nilai User
+Route::get('/TampilanNilai', [InputNilaiController::class , 'Tampilan']);
+
+
+
+//Tampilan Forum
+Route::get('/forumindex', [ForumController::class , 'index'])->name('indexforum');
+Route::get('/forumcreate', [ForumController::class , 'create'])->name('createforum');
+Route::get('/forumshow/{Forum:id}', [ForumController::class , 'show'])->name('showforum');
+Route::get('/forumedit/{Forum:id}', [ForumController::class , 'edit'])->name('editforum');
+Route::post('/updateforum/{Forum:id}', [ForumController::class , 'update'])->name('updateforum');
+Route::get('/deleteforum/{Forum:id}', [ForumController::class , 'destroy'])->name('deleteforum');
+Route::POST('/forumpost', [ForumController::class , 'store'])->name('storeforum');
+Route::POST('/comment', [ReplyController::class , 'store'])->name('storecomment');
