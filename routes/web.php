@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlogController;
-use App\Http\Controllers\HomeController;
+// use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\MateriController;
 use App\Http\Controllers\VideoController;
@@ -12,8 +12,8 @@ use App\Http\Controllers\Client\IndexController;
 use App\Http\Controllers\Client\ViewMateriController;
 use App\Http\Controllers\Client\TugasController;
 use App\Http\Controllers\FeedbackController;
-use App\Models\Blog;
-use App\Models\InputNilai;
+use App\Http\Controllers\ForumController;
+use App\Http\Controllers\ReplyController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -83,3 +83,14 @@ Route::get('/TampilanNilai', [InputNilaiController::class , 'Tampilan']);
 Route::get('/feedback', [FeedbackController::class,'index']);
 Route::post('/feedbackstore',[FeedbackController::class,'store'])->name('store');
 Route::get('/listfeed', [FeedbackController::class,'show']);
+
+
+//Tampilan Forum
+Route::get('/forumindex', [ForumController::class , 'index'])->name('indexforum');
+Route::get('/forumcreate', [ForumController::class , 'create'])->name('createforum');
+Route::get('/forumshow/{Forum:id}', [ForumController::class , 'show'])->name('showforum');
+Route::get('/forumedit/{Forum:id}', [ForumController::class , 'edit'])->name('editforum');
+Route::post('/updateforum/{Forum:id}', [ForumController::class , 'update'])->name('updateforum');
+Route::get('/deleteforum/{Forum:id}', [ForumController::class , 'destroy'])->name('deleteforum');
+Route::POST('/forumpost', [ForumController::class , 'store'])->name('storeforum');
+Route::POST('/comment', [ReplyController::class , 'store'])->name('storecomment');
