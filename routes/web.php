@@ -72,7 +72,7 @@ Route::post('/index_nilai', [InputNilaiController::class, 'store']);
 Route::get('/home', [IndexController::class, 'index']);
 
 //Pengumpulan tugas Route
-Route::get('/upload', [TugasController::class, 'index']);
+Route::get('/upload', [TugasController::class, 'index'])->name('tugas');
 Route::post('/upload', [TugasController::class, 'upload'])->name('upload.post');
 Route::get('/list', [TugasController::class, 'listtugas'])->name('list_tugas');
 //view materi
@@ -83,7 +83,7 @@ Route::get('/detail_materi/{mat:id}', [ViewMateriController::class, 'detail']);
 Route::get('/TampilanNilai', [InputNilaiController::class, 'Tampilan']);
 
 //Feedback Route
-Route::get('/feedback', [FeedbackController::class, 'index']);
+Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback');
 Route::post('/feedbackstore', [FeedbackController::class, 'store'])->name('store');
 Route::get('/listfeed', [FeedbackController::class, 'show']);
 //Tampilan Forum
@@ -105,7 +105,7 @@ Route::get('/edituser/{User:id}', [UserController::class, 'edit'])->name('editus
 Route::post('/storeupdate/{User:id}', [UserController::class, 'update'])->name('updateuser');
 Route::get('/deleteuser/{User:id}', [UserController::class, 'destroy'])->name('deleteuser');
 //Daily Report
-Route::get('/DailyReport', [DailyReportController::class, 'create']);
+Route::get('/DailyReport', [DailyReportController::class, 'create'])->name('createreport');
 Route::get('/DailyReportView', [DailyReportController::class, 'index'])->name('DailyIndex');
 Route::POST('/DailyReportPost', [DailyReportController::class, 'store'])->name('storedailyreport');
 

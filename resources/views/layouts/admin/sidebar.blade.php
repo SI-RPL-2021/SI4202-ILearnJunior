@@ -11,8 +11,7 @@
       <li class="nav-item dropdown">
         <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
         <ul class="dropdown-menu">
-          <li><a class="nav-link" href="index-0.html">Lihat Dashboard</a></li>
-          <li><a class="nav-link" href="index.html">Konfigurasi Landing Page</a></li>
+          <li><a class="nav-link" href="/admin">Lihat Dashboard</a></li>
         </ul>
       </li>
       <li class="menu-header">Fiture</li>

@@ -3,6 +3,7 @@
 @include('layouts/client/header')
 <body>
 @include('layouts/client/navbar')
+<div class="py-5">
 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -11,24 +12,24 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="{{asset('unsplash/unsplash1.jpg')}}" class="d-block w-100" height="450">
+        <img src="{{asset('unsplash/undraw2.png')}}" class="d-block w-100" height="550">
         <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h5 class="text-dark">Belajar Bersama</h5>
+          <p class="text-dark">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="{{asset('unsplash/unsplash2.jpg')}}" class="d-block w-100" height="450">
+        <img src="{{asset('unsplash/undraw1.png')}}" class="d-block w-100" height="550">
         <div class="carousel-caption d-none d-md-block">
-          <h5>Second slide label</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h5 class="text-dark">Second slide label</h5>
+          <p class="text-dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="{{asset('unsplash/unsplash3.jpg')}}" class="d-block w-100" height="450">
+        <img src="{{asset('unsplash/undraw.png')}}" class="d-block w-100" height="550">
         <div class="carousel-caption d-none d-md-block">
-          <h5>Third slide label</h5>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          <h5 class="text-dark">Third slide label</h5>
+          <p class="text-dark">Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
         </div>
       </div>
     </div>
@@ -41,6 +42,8 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+</div>
+<hr>
   @include('layouts/client/cdnjs') 
 </body>
 </html>
