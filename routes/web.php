@@ -12,8 +12,7 @@ use App\Http\Controllers\Client\IndexController;
 use App\Http\Controllers\Client\ViewMateriController;
 use App\Http\Controllers\Client\TugasController;
 use App\Http\Controllers\FeedbackController;
-use App\Models\Blog;
-use App\Models\InputNilai;
+use App\Http\Controllers\PodcastController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
