@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlogController;
-use App\Http\Controllers\HomeController;
+// use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\MateriController;
 use App\Http\Controllers\VideoController;
@@ -10,8 +10,11 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\InputNilaiController;
 use App\Http\Controllers\Client\IndexController;
 use App\Http\Controllers\Client\ViewMateriController;
-use App\Models\Blog;
-use App\Models\InputNilai;
+use App\Http\Controllers\Client\TugasController;
+use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\ForumController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ReplyController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -64,10 +67,40 @@ Route::get('/input_nilai', [InputNilaiController::class , 'create'])->name('inpu
 Route::post('/index_nilai', [InputNilaiController::class , 'store']);
 
 // Routing Client
+Route::get('/home',[IndexController::class,'index']);
 
-Route::get('/home', [IndexController::class, 'index']);
+//Pengumpulan tugas Route
+Route::get('/upload',[TugasController::class,'index']);
+Route::post('/upload',[TugasController::class,'upload'])->name('upload.post');
+Route::get('/list',[TugasController::class,'listtugas'])->name('list_tugas');
+//view materi
 Route::get('/view_materi', [ViewMateriController::class, 'index']);
 Route::get('/detail_materi/{mat:id}', [ViewMateriController::class, 'detail']);
 
 //Tampilan Nilai User
 Route::get('/TampilanNilai', [InputNilaiController::class , 'Tampilan']);
+
+//Feedback Route
+Route::get('/feedback', [FeedbackController::class,'index']);
+Route::post('/feedbackstore',[FeedbackController::class,'store'])->name('store');
+Route::get('/listfeed', [FeedbackController::class,'show']);
+
+
+//Tampilan Forum
+Route::get('/forumindex', [ForumController::class , 'index'])->name('indexforum');
+Route::get('/forumcreate', [ForumController::class , 'create'])->name('createforum');
+Route::get('/forumshow/{Forum:id}', [ForumController::class , 'show'])->name('showforum');
+Route::get('/forumedit/{Forum:id}', [ForumController::class , 'edit'])->name('editforum');
+Route::post('/updateforum/{Forum:id}', [ForumController::class , 'update'])->name('updateforum');
+Route::get('/deleteforum/{Forum:id}', [ForumController::class , 'destroy'])->name('deleteforum');
+Route::POST('/forumpost', [ForumController::class , 'store'])->name('storeforum');
+Route::POST('/comment', [ReplyController::class , 'store'])->name('storecomment');
+
+//Tampil Kelas
+Route::get('/tampilkelas',[KelasController::class,'indexcl'])->name('clientkelas');
+//User Route
+
+Route::get('/indexuser',[UserController::class,'index'])->name('listuser');
+Route::get('/edituser/{User:id}',[UserController::class,'edit'])->name('edituser');
+Route::post('/storeupdate/{User:id}',[UserController::class,'update'])->name('updateuser');
+Route::get('/deleteuser/{User:id}',[UserController::class,'destroy'])->name('deleteuser');

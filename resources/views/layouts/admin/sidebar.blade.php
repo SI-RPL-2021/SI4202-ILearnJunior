@@ -50,7 +50,7 @@
       <li class="nav-item dropdown">
         <a href="#" class="nav-link has-dropdown"><i class="fas fa-users"></i> <span>Management User</span></a>
         <ul class="dropdown-menu">
-          <li><a class="nav-link" href="modules-calendar.html">User Terdaftar</a></li>
+          <li><a class="nav-link" href="{{route('listuser')}}">User Terdaftar</a></li>
         </ul>
       </li>
       <li class="nav-item dropdown">
@@ -58,6 +58,18 @@
         <ul class="dropdown-menu">
           <li><a class="nav-link" href="{{route('input_nilai')}}">Input Nilai</a></li>
           <li><a class="nav-link beep beep-sidebar" href="/index">Lihat Nilai</a></li>
+        </ul>
+      </li>
+      <li class="nav-item dropdown">
+        <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i> <span>Pengumpulan Tugas</span></a>
+        <ul class="dropdown-menu">
+          <li><a class="nav-link" href="{{route('list_tugas')}}">List Pengumpulan</a></li>
+        </ul>
+      </li>
+      <li class="nav-item dropdown">
+        <a href="#" class="nav-link has-dropdown"><i class="fas fa-users"></i> <span>Feedback</span></a>
+        <ul class="dropdown-menu">
+          <li><a class="nav-link" href="/listfeed">List Feedback</a></li>
         </ul>
       </li>
     </ul>

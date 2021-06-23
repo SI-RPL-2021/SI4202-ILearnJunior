@@ -17,6 +17,11 @@ class KelasController extends Controller
         $kls = Kelas::get();
         return view("admin.Kelas.index", compact('kls'));
     }
+    public function indexcl()
+    {
+        $kls = Kelas::get();
+        return view("client.kelas.view_kelas", compact('kls'));
+    }
 
     /**
      * Show the form for creating a new resource.

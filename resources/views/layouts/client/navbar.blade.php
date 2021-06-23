@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+<nav class="navbar navbar-expand-lg navbar-light bg-gradient fixed-top">
     <a href="/">
         <img src="https://i.ibb.co/HBdgfxn/logo-i-learn-junior.png" alt="logo-iLearn" width="55" class="ml-4">
     </a>
@@ -8,6 +8,9 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         @guest
             <ul class="navbar-nav ml-auto mr-5 ">
+            <li class="nav-item mr-3">
+                <a class="nav-link text-white" href="/feedback">FEEDBACK</a>
+            </li>
             <li class="nav-item mr-3">
               <a class="nav-link text-white" href="#">ABOUT</a>
             </li>
@@ -19,6 +22,9 @@
             </li>
         @else
       <ul class="navbar-nav ml-auto mr-5 ">
+        <li class="nav-item mr-3">
+          <a class="nav-link text-white" href="/feedback">FEEDBACK</a>
+        </li>
         <li class="nav-item mr-3">
           <a class="nav-link text-white" href="#">FORUM</a>
         </li>
