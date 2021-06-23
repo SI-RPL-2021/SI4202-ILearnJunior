@@ -104,6 +104,7 @@ Route::get('/indexuser', [UserController::class, 'index'])->name('listuser');
 Route::get('/edituser/{User:id}', [UserController::class, 'edit'])->name('edituser');
 Route::post('/storeupdate/{User:id}', [UserController::class, 'update'])->name('updateuser');
 Route::get('/deleteuser/{User:id}', [UserController::class, 'destroy'])->name('deleteuser');
+
 //Daily Report
 Route::get('/DailyReport', [DailyReportController::class, 'create']);
 Route::get('/DailyReportView', [DailyReportController::class, 'index'])->name('DailyIndex');
@@ -116,3 +117,10 @@ Route::get('/podcast', [PodcastController::class, 'index'])->name('podcast');
 Route::get('/editpodcast/{Podcast:id}', [PodcastController::class, 'edit']);
 Route::post('/updatepodcast/{Podcast:id}', [PodcastController::class, 'update']);
 Route::get('/deletepodcast/{Podcast:id}', [PodcastController::class, 'destroy']);
+
+//Management User premium
+Route::get('/requestpremiumadmin',[UserController::class,'indexpremiumadmin'])->name('premiumadmin');
+Route::get('/requestpremium',[UserController::class,'indexpremium'])->name('premium');
+Route::post('/requeststore',[UserController::class,'store'])->name('storerequest');
+Route::get('/approvepremium/{User:id}',[UserController::class,'approve'])->name('approve');
+Route::get('/deleterequest/{User:id}',[UserController::class,'destroypremium'])->name('deleterequest');

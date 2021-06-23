@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\requestpremium;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 class UserController extends Controller
@@ -25,7 +26,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        
+
     }
 
     /**
@@ -34,20 +35,13 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+    public function store(Request $request){
+        $request = requestpremium::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'alasan' => $request->alasan,
+        ]);
+        return back()->with('success','Your request have successfully sent!.');
     }
 
     /**
@@ -92,5 +86,32 @@ class UserController extends Controller
         $user = User::findorFail($id);
         $user->delete();
         return redirect()->route('register');
+    }
+
+    public function indexpremiumadmin()
+    {
+        $data = DB::table('requestpremium')->limit(7)->get();
+        return view('admin.user.requestpremium')->with('data',$data);
+    }
+
+    public function indexpremium()
+    {
+        $data = DB::table('users')->limit(7)->get();
+        return view('client.pengajuanpremium')->with('data',$data);
+    }
+
+    public function approve($id){
+        $approve = requestpremium::findorfail($id);
+        $approve->status = 'Diterima';
+        $approve->save();
+
+        return redirect()->back();
+    }
+
+    public function destroypremium($id)
+    {
+        $user = requestpremium::findorFail($id);
+        $user->delete();
+        return redirect()->back();
     }
 }
