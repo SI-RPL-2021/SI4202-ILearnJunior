@@ -51,6 +51,9 @@
               <a href="{{route('logout')}}" class="dropdown-item has-icon text-danger">
                 <i class="fas fa-sign-out-alt"></i> Logout
               </a>
+              <a href="{{route('premium')}}" class="dropdown-item has-icon text-success">
+                <i class="fas fa-sign-out-alt"></i> Ajukan Upgrade
+              </a>
             </div>
           </li>
         </ul>
