@@ -11,6 +11,7 @@ use App\Http\Controllers\InputNilaiController;
 use App\Http\Controllers\Client\IndexController;
 use App\Http\Controllers\Client\ViewMateriController;
 use App\Http\Controllers\Client\TugasController;
+use App\Http\Controllers\Client\TampilKelas;
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\ReplyController;
 use Illuminate\Support\Facades\Route;
@@ -89,3 +90,6 @@ Route::post('/updateforum/{Forum:id}', [ForumController::class , 'update'])->nam
 Route::get('/deleteforum/{Forum:id}', [ForumController::class , 'destroy'])->name('deleteforum');
 Route::POST('/forumpost', [ForumController::class , 'store'])->name('storeforum');
 Route::POST('/comment', [ReplyController::class , 'store'])->name('storecomment');
+
+//Tampil Kelas
+Route::get('/tampilkelas',[KelasController::class,'indexcl'])->name('clientkelas');
