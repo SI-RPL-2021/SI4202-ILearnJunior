@@ -4,6 +4,9 @@
 
 <body>
   @include('layouts/client/navbar')
+  <br>
+  <br>
+  <br>
 
   <div class="container py-3">
     <div class="row">
