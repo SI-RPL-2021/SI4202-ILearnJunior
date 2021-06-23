@@ -9,6 +9,7 @@ use App\Http\Controllers\VideoController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\InputNilaiController;
 use App\Http\Controllers\Client\IndexController;
+use App\Http\Controllers\Client\DailyReportController;
 use App\Http\Controllers\Client\ViewMateriController;
 use App\Http\Controllers\Client\TugasController;
 use App\Http\Controllers\FeedbackController;
@@ -61,36 +62,41 @@ Route::post('/update_blog/{Blog:id}', [BlogController::class, 'update']);
 Route::get('/delete_blog/{Blog:id}', [BlogController::class, 'destroy']);
 
 //Input Nilai
-Route::get('/index', [InputNilaiController::class , 'index']);
-Route::get('/input_nilai', [InputNilaiController::class , 'create'])->name('input_nilai');
-Route::post('/index_nilai', [InputNilaiController::class , 'store']);
+Route::get('/index', [InputNilaiController::class, 'index']);
+Route::get('/input_nilai', [InputNilaiController::class, 'create'])->name('input_nilai');
+Route::post('/index_nilai', [InputNilaiController::class, 'store']);
 
 // Routing Client
-Route::get('/home',[IndexController::class,'index']);
+Route::get('/home', [IndexController::class, 'index']);
 
 //Pengumpulan tugas Route
-Route::get('/upload',[TugasController::class,'index']);
-Route::post('/upload',[TugasController::class,'upload'])->name('upload.post');
-Route::get('/list',[TugasController::class,'listtugas'])->name('list_tugas');
+Route::get('/upload', [TugasController::class, 'index']);
+Route::post('/upload', [TugasController::class, 'upload'])->name('upload.post');
+Route::get('/list', [TugasController::class, 'listtugas'])->name('list_tugas');
 //view materi
 Route::get('/view_materi', [ViewMateriController::class, 'index']);
 Route::get('/detail_materi/{mat:id}', [ViewMateriController::class, 'detail']);
 
 //Tampilan Nilai User
-Route::get('/TampilanNilai', [InputNilaiController::class , 'Tampilan']);
+Route::get('/TampilanNilai', [InputNilaiController::class, 'Tampilan']);
 
 //Feedback Route
-Route::get('/feedback', [FeedbackController::class,'index']);
-Route::post('/feedbackstore',[FeedbackController::class,'store'])->name('store');
-Route::get('/listfeed', [FeedbackController::class,'show']);
+Route::get('/feedback', [FeedbackController::class, 'index']);
+Route::post('/feedbackstore', [FeedbackController::class, 'store'])->name('store');
+Route::get('/listfeed', [FeedbackController::class, 'show']);
 
 
 //Tampilan Forum
-Route::get('/forumindex', [ForumController::class , 'index'])->name('indexforum');
-Route::get('/forumcreate', [ForumController::class , 'create'])->name('createforum');
-Route::get('/forumshow/{Forum:id}', [ForumController::class , 'show'])->name('showforum');
-Route::get('/forumedit/{Forum:id}', [ForumController::class , 'edit'])->name('editforum');
-Route::post('/updateforum/{Forum:id}', [ForumController::class , 'update'])->name('updateforum');
-Route::get('/deleteforum/{Forum:id}', [ForumController::class , 'destroy'])->name('deleteforum');
-Route::POST('/forumpost', [ForumController::class , 'store'])->name('storeforum');
-Route::POST('/comment', [ReplyController::class , 'store'])->name('storecomment');
+Route::get('/forumindex', [ForumController::class, 'index'])->name('indexforum');
+Route::get('/forumcreate', [ForumController::class, 'create'])->name('createforum');
+Route::get('/forumshow/{Forum:id}', [ForumController::class, 'show'])->name('showforum');
+Route::get('/forumedit/{Forum:id}', [ForumController::class, 'edit'])->name('editforum');
+Route::post('/updateforum/{Forum:id}', [ForumController::class, 'update'])->name('updateforum');
+Route::get('/deleteforum/{Forum:id}', [ForumController::class, 'destroy'])->name('deleteforum');
+Route::POST('/forumpost', [ForumController::class, 'store'])->name('storeforum');
+Route::POST('/comment', [ReplyController::class, 'store'])->name('storecomment');
+
+//Daily Report
+Route::get('/DailyReport', [DailyReportController::class, 'create']);
+Route::get('/DailyReportView', [DailyReportController::class, 'index'])->name('DailyIndex');
+Route::POST('/DailyReportPost', [DailyReportController::class, 'store'])->name('storedailyreport');
