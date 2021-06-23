@@ -50,7 +50,7 @@
       <li class="nav-item dropdown">
         <a href="#" class="nav-link has-dropdown"><i class="fas fa-users"></i> <span>Management User</span></a>
         <ul class="dropdown-menu">
-          <li><a class="nav-link" href="modules-calendar.html">User Terdaftar</a></li>
+          <li><a class="nav-link" href="{{route('listuser')}}">User Terdaftar</a></li>
         </ul>
       </li>
       <li class="nav-item dropdown">

@@ -13,6 +13,7 @@ use App\Http\Controllers\Client\ViewMateriController;
 use App\Http\Controllers\Client\TugasController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\ForumController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ReplyController;
 use Illuminate\Support\Facades\Route;
 
@@ -97,3 +98,9 @@ Route::POST('/comment', [ReplyController::class , 'store'])->name('storecomment'
 
 //Tampil Kelas
 Route::get('/tampilkelas',[KelasController::class,'indexcl'])->name('clientkelas');
+//User Route
+
+Route::get('/indexuser',[UserController::class,'index'])->name('listuser');
+Route::get('/edituser/{User:id}',[UserController::class,'edit'])->name('edituser');
+Route::post('/storeupdate/{User:id}',[UserController::class,'update'])->name('updateuser');
+Route::get('/deleteuser/{User:id}',[UserController::class,'destroy'])->name('deleteuser');
