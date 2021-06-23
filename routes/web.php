@@ -13,6 +13,7 @@ use App\Http\Controllers\Client\ViewMateriController;
 use App\Http\Controllers\Client\TugasController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\ForumController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ReplyController;
 use Illuminate\Support\Facades\Route;
 
@@ -94,3 +95,10 @@ Route::post('/updateforum/{Forum:id}', [ForumController::class , 'update'])->nam
 Route::get('/deleteforum/{Forum:id}', [ForumController::class , 'destroy'])->name('deleteforum');
 Route::POST('/forumpost', [ForumController::class , 'store'])->name('storeforum');
 Route::POST('/comment', [ReplyController::class , 'store'])->name('storecomment');
+
+//User Route
+
+Route::get('/indexuser',[UserController::class,'index'])->name('listuser');
+Route::get('/edituser/{User:id}',[UserController::class,'edit'])->name('edituser');
+Route::post('/storeupdate/{User:id}',[UserController::class,'update'])->name('updateuser');
+Route::get('/deleteuser/{User:id}',[UserController::class,'destroy'])->name('deleteuser');
