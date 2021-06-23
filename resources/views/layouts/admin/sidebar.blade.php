@@ -51,6 +51,7 @@
         <a href="#" class="nav-link has-dropdown"><i class="fas fa-users"></i> <span>Management User</span></a>
         <ul class="dropdown-menu">
           <li><a class="nav-link" href="{{route('listuser')}}">User Terdaftar</a></li>
+          <li><a class="nav-link" href="{{route('premiumadmin')}}">Pengajuan Premium</a></li>
         </ul>
       </li>
       <li class="nav-item dropdown">
