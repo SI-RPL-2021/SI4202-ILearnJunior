@@ -16,6 +16,7 @@ use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ReplyController;
+use App\Http\Controllers\PodcastController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -107,3 +108,11 @@ Route::get('/deleteuser/{User:id}', [UserController::class, 'destroy'])->name('d
 Route::get('/DailyReport', [DailyReportController::class, 'create']);
 Route::get('/DailyReportView', [DailyReportController::class, 'index'])->name('DailyIndex');
 Route::POST('/DailyReportPost', [DailyReportController::class, 'store'])->name('storedailyreport');
+
+//Management Podcasts
+Route::get('/tambahpodcast', [PodcastController::class, 'create'])->name('addpodcast');
+Route::post('/storepodcast', [PodcastController::class, 'store'])->name('storepodcast');
+Route::get('/podcast', [PodcastController::class, 'index'])->name('podcast');
+Route::get('/editpodcast/{Podcast:id}', [PodcastController::class, 'edit']);
+Route::post('/updatepodcast/{Podcast:id}', [PodcastController::class, 'update']);
+Route::get('/deletepodcast/{Podcast:id}', [PodcastController::class, 'destroy']);

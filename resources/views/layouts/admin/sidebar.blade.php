@@ -33,9 +33,8 @@
       <li class="nav-item dropdown">
         <a href="#" class="nav-link has-dropdown"><i class="fas fa-microphone"></i> <span>Management Podcast</span></a>
         <ul class="dropdown-menu">
-          <li><a href="gmaps-advanced-route.html">Tambahkan Podcast</a></li>
-          <li><a href="gmaps-draggable-marker.html">List Podcast</a></li>
-          <li><a href="gmaps-geocoding.html">Coming Soon</a></li>
+          <li><a href="{{route('addpodcast')}}">Tambahkan Podcast</a></li>
+          <li><a href="{{route('podcast')}}">List Podcast</a></li>
         </ul>
       </li>
       <li class="nav-item dropdown">
