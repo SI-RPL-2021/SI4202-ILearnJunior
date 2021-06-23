@@ -94,3 +94,6 @@ Route::post('/updateforum/{Forum:id}', [ForumController::class , 'update'])->nam
 Route::get('/deleteforum/{Forum:id}', [ForumController::class , 'destroy'])->name('deleteforum');
 Route::POST('/forumpost', [ForumController::class , 'store'])->name('storeforum');
 Route::POST('/comment', [ReplyController::class , 'store'])->name('storecomment');
+
+//Tampil Kelas
+Route::get('/tampilkelas',[KelasController::class,'indexcl'])->name('clientkelas');
