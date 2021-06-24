@@ -43,7 +43,7 @@ class DailyReportController extends Controller
             'name' => $request->name,
             'dsc' => $request->dsc,
         ]);
-        return redirect()->back();
+        return redirect()->back()->with('success','Report telah dikirim');
     }
 
     /**
